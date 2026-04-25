@@ -1,0 +1,62 @@
+{
+  "name": "Linear Discriminant Analysis (LDA)",
+  "image": "biomerisdocker/lda",
+  "vantage6_version": "4.9",
+  "description": "Federated Linear Discriminant Analysis for privacy-preserving dimensionality reduction and classification",
+  "code_url": "https://github.com/Minkun-L/Federated-Learning-Algorithms/tree/main/v6-lda-py",
+  "documentation_url": "",
+  "partitioning": "horizontal",
+  "functions": [
+    {
+      "name": "central",
+      "description": "Central part of a federated LDA algorithm.",
+      "type": "central",
+      "display_name": "Linear Discriminant Analysis (LDA)",
+      "standalone": true,
+      "databases": [
+        {
+          "description": "Data to compute LDA for",
+          "name": "Database"
+        }
+      ],
+      "arguments": [
+        {
+          "name": "label_col",
+          "type": "column",
+          "display_name": "Label column",
+          "description": "Categorical class label column used for supervised LDA.",
+          "has_default_value": false,
+          "is_frontend_only": false
+        },
+        {
+          "name": "features",
+          "type": "column_list",
+          "display_name": "Features",
+          "description": "List of column names to include in LDA. If null, numeric columns are used.",
+          "default_value": null,
+          "has_default_value": true,
+          "is_frontend_only": false
+        },
+        {
+          "name": "n_components",
+          "type": "integer",
+          "display_name": "Number of components",
+          "description": "Number of discriminant components to return. If null, max feasible components are returned.",
+          "default_value": null,
+          "has_default_value": true,
+          "is_frontend_only": false
+        },
+        {
+          "name": "reg",
+          "type": "float",
+          "display_name": "Regularization",
+          "description": "Diagonal regularization added to within-class scatter for numerical stability.",
+          "default_value": 1e-6,
+          "has_default_value": true,
+          "is_frontend_only": false
+        }
+      ],
+      "ui_visualizations": []
+    }
+  ]
+}
